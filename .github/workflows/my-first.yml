@@ -11,7 +11,7 @@ jobs:
               with:
                 node-version: 18.0
             - name: install necessary dependencies
-              run: npm ci
+              run: npm install
             - name: execute  lint script
               run: npm lint
             - name: execute build
