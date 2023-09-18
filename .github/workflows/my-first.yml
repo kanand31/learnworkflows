@@ -13,11 +13,11 @@ jobs:
             - name: install necessary dependencies
               run: npm install
             - name: execute  lint script
-              run: npm lint
+              run: npm run lint
             - name: execute build
-              run: npm build
+              run: npm run build
             - name: execute test
-              run: npm test
+              run: npm run test
             - name: deploy 
               run: echo "deploying our app"
               
