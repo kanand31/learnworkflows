@@ -1,0 +1,25 @@
+name: lint,test and deploy
+on: push
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name : fetch code
+              uses: actions/checkout@v3
+            - name: install nodejs on the runner
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18.0
+            - name: install necessary dependencies
+              run: npm ci
+            - name: execute  lint script
+              run: npm lint
+            - name: execute build
+              run: npm build
+            - name: execute test
+              run: npm test
+            - name: deploy 
+              run: echo "deploying our app"
+              
+
+
